@@ -17,6 +17,8 @@ fi
 KEY_FILE=.webui_secret_key
 
 PORT="${PORT:-8080}"
+# PORT="${PORT:-443}"   # On force le port 443 par défaut
+
 HOST="${HOST:-0.0.0.0}"
 if test "$WEBUI_SECRET_KEY $WEBUI_JWT_SECRET_KEY" = " "; then
   echo "Loading WEBUI_SECRET_KEY from file, not provided as an environment variable."
@@ -66,3 +68,9 @@ if [ -n "$SPACE_ID" ]; then
 fi
 
 WEBUI_SECRET_KEY="$WEBUI_SECRET_KEY" exec uvicorn open_webui.main:app --host "$HOST" --port "$PORT" --forwarded-allow-ips '*'
+# WEBUI_SECRET_KEY="$WEBUI_SECRET_KEY" exec uvicorn open_webui.main:app \
+#   --host "$HOST" \
+#   --port "$PORT" \
+#   --forwarded-allow-ips '*' \
+#   --ssl-keyfile "$SCRIPT_DIR/cert/wildcard.talsom.tech.key" \
+#   --ssl-certfile "$SCRIPT_DIR/cert/wildcard.talsom.tech.crt"
