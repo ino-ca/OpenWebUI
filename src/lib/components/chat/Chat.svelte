@@ -2067,8 +2067,29 @@
 							<div
 								class="absolute bottom-1 text-xs text-gray-500 text-center line-clamp-1 right-0 left-0"
 							>
-								<!-- {$i18n.t('LLMs can make mistakes. Verify important information.')} -->
+								{$i18n.t('LLMs can make mistakes. Verify important information.')}
 							</div>
+							<!-- Ajouter l'image fixe ici -->
+							<div class="fixed-image-container">
+								<a href="https://www.talsom.com/services/intelligence-artificielle-analytique-de-donnees/" target="_blank">
+									<img src="/PropulseePar_TalsomAI.png" alt="Propulsé par Talsom AI" width="100" />
+								</a>
+							</div>
+							<!-- Styles CSS -->
+							<style>
+							.fixed-image-container {
+								margin-top: 5px;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+							}
+
+							.fixed-image-container img {
+								margin-top: 10px;
+								max-width: 100px;
+								height: auto;
+							}
+							</style>
 						</div>
 					{:else}
 						<div class="overflow-auto w-full h-full flex items-center">

@@ -612,6 +612,10 @@
 				on:input={searchDebounceHandler}
 				placeholder={$i18n.t('Search')}
 			/>
+			<!-- Ajout de l'image Logo -->
+			<div class="flex justify-center my-4"> 
+				<img src="/cie-logo.png" alt="Logo" width="200">
+			</div>
 		</div>
 
 		<div
